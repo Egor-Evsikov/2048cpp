@@ -7,23 +7,73 @@
 #include <random>
 #include <windows.h>
 #include <conio.h>
-#include <functional>
+#include "field.h"
+
+// w - 119 W - 87
+// a - 97 A - 65
+// s - 115 S - 83
+// d - 100 D - 68
+
+// void Field :: game() {
+//     while (true) {
+//         int key = _getch(); 
+//         if (key == 0 || key == 224) {
+//             switch (_getch()) {
+//                 case 72 : // Вверх
+//                     swipeUp();
+//                     break;
+//                 case 80: // Вниз
+//                     swipeDown();
+//                     break;
+//                 case 75: // Влево
+//                     swipeLeft();
+//                     break;
+//                 case 77: // Вправо
+//                     swipeRight();
+//                     break;
+//             }
+//         } else if (key == 27) { // ESC
+//             saveFile();
+//             break;
+//         } else {
+//             switch (key)
+//             {
+//             case 119:
+//             case 87:
+//                 swipeUp();
+//                 break;
+//             case 97 :
+//             case 65:
+//                 swipeLeft();
+//                 break;
+//             case 115: 
+//             case 83: 
+//                 swipeDown();
+//                 break;
+//             case 100:
+//             case 68:
+//                 swipeLeft();
+//                 break;
+//             }
+//         }
+//     }
+// }
 
 
-class Field {
-    private:
-        int size;
-        int** field;
-    public:
-        //void swipeDown(int, std :: function<void (int *)>);
-        void swipeUpAndDown(int, std :: function<void (int *)>);
-        void swipeLeft(int, std :: function<void (int *)>);
-        void swipeRight(int, std :: function<void (int *)>);
-        void printField();
-        void spawnNumber();
-        void saveFile();
-        Field();
-        void game();
-        //~Field();
+Field :: Field() {
+    std :: cout << "Enter field size:";
+    std :: cin >> size;
+    while (std::cin.fail()) {
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+        std :: cin >> size;
+    }
+    field = new int*[size];
+    for (int i = 0; i < size; i ++) {
+        field[i] = new int[size];
+        for (int j = 0; j < size; j++) {
+            field[i][j] = 0;
+        }
+    }
 
-};
+}

@@ -1,39 +1,38 @@
-#include <field.cpp>
+#include "field.h"
 
+// void setColor(int textColor) {
+//     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+//     SetConsoleTextAttribute(hConsole, textColor);
+// }
 
-void setColor(int textColor) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, textColor);
-}
-
-void inc(int *i) {i++;}
-void dec(int *i) {i--;}
-
-
+// void inc(int *i) {i++;}
+// void dec(int *i) {i--;}
 
 
 
 
-void Field :: swipeUpAndDown(int start, std :: function<void(int *)> krement) {
-    int swipes{0};
-    do {
-        swipes = 0;
-        for (int i = start; i > 0 ; krement(&i)) {
-            for (int j = 0; j < size; j++) {
-                if (field[i][j] == field[i - 1][j] && field[i][j] != 0) {
-                    swipes ++;
-                    field[i - 1][j] ++;
-                    field[i][j] = 0;
-                }
-                else if (field[i][j] != 0 && field[i - 1][j] == 0) {
-                    field[i - 1][j] = field[i][j];
-                    field [i][j] = 0;
-                    swipes++;
-                }
-            }
-        }
-    } while (swipes != 0);
-}
+
+
+// void Field :: swipeUpAndDown(int start, std :: function<void(int *)> krement) {
+//     int swipes{0};
+//     do {
+//         swipes = 0;
+//         for (int i = start; i > 0 ; krement(&i)) {
+//             for (int j = 0; j < size; j++) {
+//                 if (field[i][j] == field[i - 1][j] && field[i][j] != 0) {
+//                     swipes ++;
+//                     field[i - 1][j] ++;
+//                     field[i][j] = 0;
+//                 }
+//                 else if (field[i][j] != 0 && field[i - 1][j] == 0) {
+//                     field[i - 1][j] = field[i][j];
+//                     field [i][j] = 0;
+//                     swipes++;
+//                 }
+//             }
+//         }
+//     } while (swipes != 0);
+// }
 
 //w - 119 W - 87
 //a - 97 A - 65
@@ -87,58 +86,58 @@ void Field :: swipeUpAndDown(int start, std :: function<void(int *)> krement) {
 
 
 
-Field :: Field() {
-    std :: cout << "Enter field size:";
-    std :: cin >> size;
-    while (std::cin.fail()) {
-        std::cin.clear(); 
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-        std :: cin >> size;
-    }
-    field = new int*[size];
-    for (int i = 0; i < size; i ++) {
-        field[i] = new int[size];
-        for (int j = 0; j < size; j++) {
-            field[i][j] = 0;
-        }
-    }
+// Field :: Field() {
+//     std :: cout << "Enter field size:";
+//     std :: cin >> size;
+//     while (std::cin.fail()) {
+//         std::cin.clear(); 
+//         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+//         std :: cin >> size;
+//     }
+//     field = new int*[size];
+//     for (int i = 0; i < size; i ++) {
+//         field[i] = new int[size];
+//         for (int j = 0; j < size; j++) {
+//             field[i][j] = 0;
+//         }
+//     }
 
-}
+// }
 
-void Field :: spawnNumber() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> random(1, 4);
-    int choice = random(gen);
-    int i1, i2;
-    while (choice <= 2) {
-        std::uniform_int_distribution<> sizerand(0, size - 1);    
-         i1 = sizerand(gen);
-         i2 = sizerand(gen);
-         if (field[i1][i2] == 0) {
-            field[i1][i2] = choice;
-            break;
-         }
-    } 
-}
+// void Field :: spawnNumber() {
+//     std::random_device rd;
+//     std::mt19937 gen(rd());
+//     std::uniform_int_distribution<> random(1, 4);
+//     int choice = random(gen);
+//     int i1, i2;
+//     while (choice <= 2) {
+//         std::uniform_int_distribution<> sizerand(0, size - 1);    
+//          i1 = sizerand(gen);
+//          i2 = sizerand(gen);
+//          if (field[i1][i2] == 0) {
+//             field[i1][i2] = choice;
+//             break;
+//          }
+//     } 
+// }
 
-void Field :: printField() {
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            std :: cout << "    ";
-        }
-        std :: cout << std :: endl;
-        for (int j = 0; j < size; j ++) {
-            if (field[i][j] == 0) {
-                //setColor(field[i][j] + 3);
-                std :: cout << "  0  ";
-            }  else
-                //setColor(field[i][j] + 3);
-                std :: cout << "  " <<pow(2, field[i][j]) << "  ";
-        } 
-        std :: cout << std :: endl;
-    } 
-}
+// void Field :: printField() {
+//     for (int i = 0; i < size; i++) {
+//         for (int j = 0; j < size; j++) {
+//             std :: cout << "    ";
+//         }
+//         std :: cout << std :: endl;
+//         for (int j = 0; j < size; j ++) {
+//             if (field[i][j] == 0) {
+//                 //setColor(field[i][j] + 3);
+//                 std :: cout << "  0  ";
+//             }  else
+//                 //setColor(field[i][j] + 3);
+//                 std :: cout << "  " <<pow(2, field[i][j]) << "  ";
+//         } 
+//         std :: cout << std :: endl;
+//     } 
+// }
 
 
 int main() {
