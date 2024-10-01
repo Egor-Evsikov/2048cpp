@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "random": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "D:/zxcursed cursach/2048cpp/game"
 }
