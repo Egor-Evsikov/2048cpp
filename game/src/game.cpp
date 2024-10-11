@@ -7,7 +7,7 @@
 #include <random>
 #include <windows.h>
 #include <conio.h>
-#include "field.h"
+#include "../include/field.h"
 
 // w - 119 W - 87
 // a - 97 A - 65

@@ -7,8 +7,7 @@
 #include <random>
 #include <windows.h>
 #include <conio.h>
-#include "field.h"
-
+#include "../include/field.h"
 
 void setColor(int textColor) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

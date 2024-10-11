@@ -1,5 +1,6 @@
-#include "field.h"
-
+#include "../include/field.h"
+#include <iostream>
+#include <time.h>
 // void setColor(int textColor) {
 //     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 //     SetConsoleTextAttribute(hConsole, textColor);
