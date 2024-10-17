@@ -2,6 +2,9 @@
 #define FIELD_H
 #include <functional>
 
+void dec(int *i); 
+void inc(int *i);
+
 class Field {
     private:
         int size;

@@ -1,4 +1,4 @@
-#include "../include/field.h"
+#include "field.h"
 #include <iostream>
 #include <time.h>
 // void setColor(int textColor) {
@@ -142,7 +142,7 @@
 
 
 int main() {
-    setColor(5);
+    //setColor(5);
 
     srand(time(NULL));
 

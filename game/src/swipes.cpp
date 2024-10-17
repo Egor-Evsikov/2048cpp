@@ -7,7 +7,7 @@
 #include <random>
 #include <windows.h>
 #include <conio.h>
-#include "../include/field.h"
+#include "field.h"
 
 void inc(int *i) {i++;}
 void dec(int *i) {i--;}

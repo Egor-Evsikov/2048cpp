@@ -6,7 +6,7 @@
 #include <time.h>
 #include <random>
 #include <windows.h>
-#include "../include/field.h"
+#include "field.h"
 
 // w - 119 W - 87
 // a - 97 A - 65

@@ -7,7 +7,7 @@
 #include <random>
 #include <windows.h>
 #include <conio.h>
-#include "../include/field.h"
+#include "field.h"
 
 void setColor(int textColor) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -30,7 +30,7 @@ void Field :: spawnNumber() {
          }
     } 
 }
-
+// ──────
 void Field :: printField() {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
