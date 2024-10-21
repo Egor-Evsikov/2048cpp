@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <conio.h>
 #include "field.h"
+#include <time.h>
 
 void setColor(int textColor) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -15,6 +16,7 @@ void setColor(int textColor) {
 }
 
 void Field :: spawnNumber() {
+    srand(time(NULL));
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> random(1, 4);

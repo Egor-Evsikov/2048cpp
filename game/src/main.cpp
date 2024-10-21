@@ -1,3 +1,4 @@
+//         if (key == 0 || key == 224) {
 #include "field.h"
 #include <iostream>
 #include <time.h>
@@ -43,7 +44,7 @@
 // void Field :: game() {
 //     while (true) {
 //         int key = _getch(); 
-//         if (key == 0 || key == 224) {
+    
 //             switch (_getch()) {
 //                 case 72 : // Вверх
 //                     swipeUp();
@@ -142,38 +143,16 @@
 
 
 int main() {
-    //setColor(5);
-
-    srand(time(NULL));
-
     std :: cout << "Welcome to 2048!" << std :: endl << "Enter any key to start playing ";
     getchar();
     Field newField;
-    //newField.game();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-    newField.spawnNumber();
-
+    for (int i = 0; i < 15; i ++ ) newField.spawnNumber();
+    newField.printField();
+    newField.swipeUp();
+    std :: cout << std :: endl;
     newField.printField();
     std :: cout << std :: endl;
 
-   newField.swipeUpAndDown(3, dec);
-    newField.printField();
 
 
 

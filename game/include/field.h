@@ -1,19 +1,20 @@
 #ifndef FIELD_H
 #define FIELD_H
+#include <iostream>
 #include <functional>
 
-void dec(int *i); 
-void inc(int *i);
+
 
 class Field {
     private:
         int size;
         int** field;
     public:
-        //void swipeDown(int, std :: function<void (int *)>);
-        void swipeUpAndDown(int, std :: function<void (int *)>);
-        void swipeLeft(int, std :: function<void (int *)>);
-        void swipeRight(int, std :: function<void (int *)>);
+        void swipeUp ();
+        void swipeDown();
+        void swipeLeft();
+        void swipeRight();
+
         void printField();
         void spawnNumber();
         void saveFile();
