@@ -36,7 +36,7 @@ void Field :: swipeDown () {
     int swipes{0};
     do {
         swipes = 0;
-        for (int i = size - 1; i > 0; i ++) {
+        for (int i = 0; i < size - 1; i ++) {
             for (int j = 0; j < size; j++) {
                 if (field[i][j] == field[i + 1][j] && field[i][j] != 0) {
                     swipes ++;

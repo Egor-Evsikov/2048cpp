@@ -18,7 +18,7 @@ set( SOURCES
 
 
 
-add_executable(MyGame ${SOURCES})
-target_include_directories(MyGame PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_executable(Nigger ${SOURCES})
+target_include_directories(Nigger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 

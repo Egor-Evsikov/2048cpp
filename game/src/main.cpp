@@ -146,11 +146,26 @@ int main() {
     std :: cout << "Welcome to 2048!" << std :: endl << "Enter any key to start playing ";
     getchar();
     Field newField;
-    for (int i = 0; i < 15; i ++ ) newField.spawnNumber();
+    for (int i = 0; i < 15; i ++ ) {newField.spawnNumber();}
+    newField.spawnNumber();
     newField.printField();
-    newField.swipeUp();
-    std :: cout << std :: endl;
-    newField.printField();
+
+    // newField.swipeUp();
+    // std :: cout << std :: endl;
+    // newField.printField();
+
+    // newField.swipeDown();
+    // std :: cout << std :: endl;
+    // newField.printField();
+
+    // newField.swipeLeft();
+    // std :: cout << std :: endl;
+    // newField.printField();
+
+    // newField.swipeRight();
+    // std :: cout << std :: endl;
+    // newField.printField();
+
     std :: cout << std :: endl;
 
 
