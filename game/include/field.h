@@ -15,6 +15,8 @@ class Field {
         void swipeLeft();
         void swipeRight();
 
+
+        void winGame();
         void printField();
         void spawnNumber();
         void saveFile();

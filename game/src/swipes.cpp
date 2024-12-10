@@ -16,7 +16,7 @@ void Field :: swipeUp() {
         swipes = 0;
         for (int i = size - 1; i > 0; i --) {
             for (int j = 0; j < size; j++) {
-                if (field[i][j] == field[i - 1][j] && field[i][j] != 0) {
+                if (field[i - 1][j] == field[i][j] && field[i - 1][j] != 0) {
                     swipes ++;
                     field[i - 1][j] ++;
                     field[i][j] = 0;
@@ -38,7 +38,7 @@ void Field :: swipeDown () {
         swipes = 0;
         for (int i = 0; i < size - 1; i ++) {
             for (int j = 0; j < size; j++) {
-                if (field[i][j] == field[i + 1][j] && field[i][j] != 0) {
+                if (field[i][j] == field[i + 1][j] && field[i + 1][j] != 0) {
                     swipes ++;
                     field[i + 1][j] ++;
                     field[i][j] = 0;
